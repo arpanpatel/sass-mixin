@@ -1,0 +1,18 @@
+/// Mixin helper to output vendor-prefixed CSS
+///
+/// @name prefix($property, $value, $prefixes: ())
+///
+/// @prop {string} $property - any valid css property (for eg. border-radius etc)
+///
+/// @prop {number | list | arglist} $value    - any valid property value
+///
+/// @prop {string} $prefixes - any valid vendor prefixes (for eg. 'webkit' , 'moz')
+///
+/// @author Hugo Giraudel
+
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    -#{$prefix}-#{$property}: $value;
+  }
+  #{$property}: $value;
+}
