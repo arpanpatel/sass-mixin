@@ -56,23 +56,7 @@ div.logo {
 
 // Use
 .elposition {
-   @include (absolute, 0, 0, 0, 0);
-}
-
-
-/*
-  Opacity Mixin
-*/
-@mixin opacity($opacity) {
-  $opacity-ie:  $opacity * 100;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$opacity-ie+")";
-   filter: alpha(opacity= $opacity-ie);
-   opacity: $opacity;
-}
-
-// Use
-.elopacity {
-  @include opacity(0.5);
+   @include position(absolute, 0, 0, 0, 0);
 }
 
 
@@ -137,7 +121,7 @@ Truncate Text
 
 // USE
 .box-emboss {
-  @include box-shadow(0.2, 0.2);
+  @include box-emboss(0.2, 0.2);
 }
 
 /*
@@ -175,15 +159,3 @@ Truncate Text
     opacity: 1;
   }
 }
-
-/*
-box sizeing mixing
-*/
-@mixin box-sizing($box-model) {
-  -webkit-box-sizing: $box-model; // Safari <= 5
-     -moz-box-sizing: $box-model; // Firefox <= 19
-          box-sizing: $box-model;
-}
-
-// USE
-@include box-sizing(border-box);
