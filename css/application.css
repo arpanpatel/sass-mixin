@@ -1,9 +1,8 @@
 .border-radius {
   width: 100px;
   height: 100px;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-  filter: alpha(opacity=20);
-  opacity: 0.2;
-  border: 1px solid #000; }
-
-/*# sourceMappingURL=application.css.map */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 1px solid #000;
+}
