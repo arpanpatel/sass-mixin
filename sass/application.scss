@@ -4,10 +4,11 @@
 
 @import "mixin/opacity";
 
+@import "mixin/ellipsis";
+
 .border-radius {
   width: 100px;
   height: 100px;
-  //@include border-radius(100px);
-  @include opacity(0.2);
+  @include ellipsis();
   border: 1px solid #000;
 }
