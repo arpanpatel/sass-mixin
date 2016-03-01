@@ -1,8 +1,21 @@
-/*
-Truncate Text
-*/
-@mixin text-overflow($overflow: ellipsis){
+/// Mixin allows truncate string with ellipsis
+///
+/// @name ellipsis()
+///
+/// @example scss
+/// .element {
+///    @include ellipsis();
+/// }
+///
+/// @example css
+/// .element {
+///    overflow: hidden;
+///    white-space: nowrap;
+///    text-overflow: ellipsis;
+/// }
+
+@mixin ellipsis() {
     overflow: hidden;
     white-space: nowrap;
-    text-overflow: $overflow;
+    text-overflow: ellipsis;
 }
