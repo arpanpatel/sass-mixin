@@ -1,3 +1,5 @@
+@import "function/functions";
+
 @import "mixin/prefixer";
 
 @import "mixin/border-radius";
@@ -6,9 +8,13 @@
 
 @import "mixin/ellipsis";
 
+@import "mixin/box-sizing";
+
+@import "mixin/font-size";
+
 .border-radius {
   width: 100px;
   height: 100px;
-  @include ellipsis();
+  @include font-size(28px);
   border: 1px solid #000;
 }
