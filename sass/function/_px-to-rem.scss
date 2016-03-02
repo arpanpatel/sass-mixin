@@ -1,0 +1,12 @@
+/// Function convert px based font size to rem
+///
+/// @name px_to_rem($size)
+///
+/// @prop {number} $size - Font size in px
+///
+/// @return {number}
+
+@function pxToRem($size) {
+  $font-size : ($size / 16px) * 1rem;
+  @return $font-size;
+}
