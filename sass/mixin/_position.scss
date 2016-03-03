@@ -1,0 +1,47 @@
+/// Mixin allows you to positioning elements
+///
+/// @name position($position, $top: null, $right: null, $bottom: null, $left: null)
+///
+/// @param {string} $position - Defines postion of type (relative, absolute, fixed or sticky.)
+///
+/// @param {number} $top - Set the top edge
+///
+/// @param {number} $right - Set the right edge
+///
+/// @param {number} $bottom - Set the bottom edge
+///
+/// @param {number} $left - Set the lefts edge
+///
+/// @example scss
+/// .element {
+///    @include position(absolute, 0, 0, 0, 0);
+/// }
+///
+/// @example css
+/// .element {
+///    position: absolute;
+///    top: 0;
+///    right: 0;
+///    bottom: 0;
+///    left: 0;
+/// }
+///
+/// @example scss (if you want to specific offsets)
+/// .element {
+///    @include position(absolute, $top: 0, $left:0);
+/// }
+///
+/// @example css
+/// .element {
+///    position: absolute;
+///    top: 0;
+///    left: 0;
+/// }
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+   position: $position;
+   top : $top;
+   right : $right;
+   bottom: $bottom;
+   left : $left;
+}
