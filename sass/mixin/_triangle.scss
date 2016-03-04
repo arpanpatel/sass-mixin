@@ -39,7 +39,7 @@
   height: 0;
   width: 0;
 
-  @if ($direction == 'top') {
+  @if($direction == 'top') {
 
     border-bottom: $size solid $color;
 
