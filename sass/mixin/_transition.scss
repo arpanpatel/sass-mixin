@@ -1,0 +1,23 @@
+/// Mixin allows you to control animation speed when changing CSS properties.
+///
+/// @name transition($transition-values...)
+///
+/// @param {arglist} $transition-values
+///
+/// @example scss
+/// .element {
+///    @include border-radius(100px);
+/// }
+///
+/// @example css
+/// .element {
+///   -webkit-border-radius: 100px;
+///   -moz-border-radius: 100px;
+///    border-radius: 100px;
+/// }
+///
+/// @require {mixin} prefix($property, $value, $prefixes: ())
+
+@mixin transition($transition-values...) {
+  @include prefix(transition, $transition-values, 'webkit' 'moz' 'ms');
+}
