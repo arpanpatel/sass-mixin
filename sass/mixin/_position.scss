@@ -2,7 +2,7 @@
 ///
 /// @name position($position, $top: null, $right: null, $bottom: null, $left: null)
 ///
-/// @param {string} $position - Defines postion of type (relative, absolute, fixed or sticky.)
+/// @param {string} $position - Defines position of type (relative, absolute, fixed or sticky.)
 ///
 /// @param {number} $top - Set the top edge
 ///
@@ -41,7 +41,7 @@
 @mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
 
    @if not index(relative absolute fixed sticky, $position) {
-      @error "Poition must be either 'relative', 'absolute', 'fixed' or 'sticky'.";
+      @error "Position must be either 'relative', 'absolute', 'fixed' or 'sticky'.";
    }
 
    position: $position;

@@ -2,7 +2,7 @@
 ///
 /// @name triangle($direction, $size: 8px, $color: #222)
 ///
-/// @param {string} $direction - set the direction of triangle (up, down, left, right)
+/// @param {string} $direction - set the direction of triangle (top, bottom, left, right)
 ///
 /// @param {number} $size - Set the size of triangle
 ///
@@ -10,50 +10,55 @@
 ///
 /// @example scss
 /// .element {
-///    @include position(absolute, 0, 0, 0, 0);
+///    @include triangle(down, 20px, #000);
 /// }
 ///
 /// @example css
 /// .element {
+///    content: '';
+///    display: block;
 ///    position: absolute;
-///    top: 0;
-///    right: 0;
-///    bottom: 0;
-///    left: 0;
+///    height: 0;
+///    width: 0;
+///    border-right: 15px solid #000;
+///    border-top: 15px solid transparent;
+///    border-bottom: 15px solid transparent;
 /// }
-///
-/// @example scss (if you want to specific offsets)
-/// .element {
-///    @include position(absolute, $top: 0, $left:0);
-/// }
-///
-/// @example css
-/// .element {
-///    position: absolute;
-///    top: 0;
-///    left: 0;
-/// }
+
 
 
 @mixin triangle($direction, $size: 8px, $color: #222) {
+
+  @if not index(top bottom left right, $direction) {
+     @error "Direction must be either 'top', 'bottom', 'left' or 'right'.";
+  }
+
   content: '';
   display: block;
   position: absolute;
-  height: 0; width: 0;
-  @if ($direction == 'up'){
+  height: 0;
+  width: 0;
+
+  @if ($direction == 'top') {
+
     border-bottom: $size solid $color;
-  }
-  @else if ($direction == 'down'){
+
+  } @else if($direction == 'bottom') {
+
     border-top: $size solid $color;
-  }
-  @else if ($direction == 'left'){
+
+  } @else if($direction == 'left') {
+
     border-right: $size solid $color;
-  }
-  @else if ($direction == 'right'){
+
+  } @else if($direction == 'right') {
+
     border-left: $size solid $color;
+
   }
 
-  @if ($direction == "up" or $direction == "down") {
+  @if($direction == "top" or $direction == "bottom") {
+
     border-left: $size solid transparent;
     border-right: $size solid transparent;
 

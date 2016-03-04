@@ -2,11 +2,11 @@
 ///
 /// @name prefix($property, $value, $prefixes: ())
 ///
-/// @prop {string} $property - any valid css property (for eg. border-radius etc)
+/// @param {string} $property - any valid css property (for eg. border-radius etc)
 ///
-/// @prop {number | list | arglist} $value    - any valid property value
+/// @param {number | list | arglist} $value    - any valid property value
 ///
-/// @prop {string} $prefixes - any valid vendor prefixes (for eg. 'webkit' , 'moz')
+/// @param {string} $prefixes - any valid vendor prefixes (for eg. 'webkit' , 'moz')
 ///
 /// @author Hugo Giraudel
 

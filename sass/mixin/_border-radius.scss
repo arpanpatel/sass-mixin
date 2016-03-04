@@ -2,7 +2,7 @@
 ///
 /// @name border-radius($radius)
 ///
-/// @prop {number} $radius - Defines the shape of the corners.
+/// @param {number} $radius - Defines the shape of the corners.
 ///
 /// @example scss
 /// .element {
@@ -27,7 +27,7 @@
 ///
 /// @name border-top-radius($radius)
 ///
-/// @prop {number} $radius - Defines the shape of the  "top left" and "top right" corners.
+/// @param {number} $radius - Defines the shape of the  "top left" and "top right" corners.
 ///
 /// @example scss
 /// .element {
@@ -55,7 +55,7 @@
 ///
 /// @name border-bottom-radius($radius)
 ///
-/// @prop {number} $radius - Defines the shape of the  "bottom left" and "bottom right" corners.
+/// @param {number} $radius - Defines the shape of the  "bottom left" and "bottom right" corners.
 ///
 /// @example scss
 /// .element {
@@ -83,7 +83,7 @@
 ///
 /// @name border-left-radius($radius)
 ///
-/// @prop {number} $radius - Defines the shape of the  "top left" and "bottom left" corners.
+/// @param {number} $radius - Defines the shape of the  "top left" and "bottom left" corners.
 ///
 /// @example scss
 /// .element {
@@ -111,7 +111,7 @@
 ///
 /// @name border-right-radius($radius)
 ///
-/// @prop {number} $radius - Defines the shape of the  "top right" and "bottom right" corners.
+/// @param {number} $radius - Defines the shape of the  "top right" and "bottom right" corners.
 ///
 /// @example scss
 /// .element {

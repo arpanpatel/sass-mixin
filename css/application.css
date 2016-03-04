@@ -1,8 +1,15 @@
 .border-radius {
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  position: relative;
   border: 1px solid #000;
+}
+
+.border-radius:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-right: 15px solid #000;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
 }

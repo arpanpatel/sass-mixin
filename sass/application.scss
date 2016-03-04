@@ -2,6 +2,8 @@
 
 @import "mixin/prefixer";
 
+@import "mixin/position";
+
 @import "mixin/border-radius";
 
 @import "mixin/opacity";
@@ -12,9 +14,13 @@
 
 @import "mixin/font-size";
 
+@import "mixin/triangle";
+
 .border-radius {
-  width: 100px;
-  height: 100px;
-  @include font-size(28px);
+
+  position: relative;
   border: 1px solid #000;
+  &:after {
+    @include triangle(left, 15px, #000);
+  }
 }
