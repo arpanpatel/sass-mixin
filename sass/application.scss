@@ -1,3 +1,17 @@
+$prefix-for-webkit:    true !global;
+$prefix-for-mozilla:   true !global;
+$prefix-for-microsoft: true !global;
+$prefix-for-opera:     true !global;
+$prefix-for-spec:      true !global;
+@mixin enable-prefix-for-all() {
+  $prefix-for-webkit:    true !global;
+  $prefix-for-mozilla:   true !global;
+  $prefix-for-microsoft: true !global;
+  $prefix-for-opera:     true !global;
+  $prefix-for-spec:      true !global;
+}
+
+
 @import "function/functions";
 
 @import "mixin/prefixer";
@@ -18,8 +32,24 @@
 
 @import "mixin/transition";
 
-.border-radius {
+@import "mixin/animation";
 
+.border-radius {
   position: relative;
   border: 1px solid #000;
+  @include  transition(all 0.5s ease-in-out);
 }
+
+// define animation
+@include keyframes(scale) {
+  0% {
+    @include border-radius(3px);
+    opacity: 0.5;
+  }
+  100% {
+    @include border-radius(4px);
+    opacity: 1;
+  }
+
+
+} ;
