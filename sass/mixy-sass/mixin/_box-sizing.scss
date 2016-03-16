@@ -20,5 +20,5 @@
 /// @require {mixin} prefix($property, $value, $prefixes: ())
 
 @mixin box-sizing( $box-value: content-box ) {
-  @include prefix(box-sizing, $box-value, 'webkit' 'moz');
+  @include prefix(box-sizing, $box-value, 'webkit' 'moz' 'spec');
 }
