@@ -7,6 +7,15 @@
   transition: all 0.5s ease-in-out;
   font-size: 25px;
   font-size: 1.5625em;
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  transform: rotate(5deg);
+  -webkit-transform: skew(5deg, 10deg);
+  -moz-transform: skew(5deg, 10deg);
+  transform: skew(5deg, 10deg);
+  -webkit-transform: scale(2, 2);
+  -moz-transform: scale(2, 2);
+  transform: scale(2, 2);
 }
 
 @-webkit-keyframes scale {
