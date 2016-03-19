@@ -1,0 +1,13 @@
+@mixin hyphens ($hyphen-value : manual) {
+
+     @if(not index(manual none auto, $hyphen-value )) {
+
+        @include prefix(hyphens, $hyphen-value, 'webkit' 'ms' 'spec');
+
+     } @else {
+
+        @error "value must be either 'deg', 'grand', 'rad' or 'turn'.";
+
+     }
+
+}
