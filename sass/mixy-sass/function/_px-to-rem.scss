@@ -8,7 +8,9 @@
 ///
 /// @return {number}
 
-@function fontSize($size, $unit) {
+@function fontSize ($size, $unit, $based-font-size : 16px) {
+
+  $font-size: '';
 
   @if($unit == "rem") {
 
