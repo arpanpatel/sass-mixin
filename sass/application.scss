@@ -9,6 +9,7 @@
   @include skew(5deg, 10deg);
   @include scale(2,2);
   @include translateX(20px);
+  @include box-shadow(10px 5px 5px rgba(#000,0.5));
 }
 
 // define animation
