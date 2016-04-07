@@ -1,0 +1,37 @@
+@mixin placeholder($placeholder-color, $placeholder-color--focus : lighten($placeholder-color, 20)) {
+
+  &::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+   color: $placeholder-color;
+  }
+
+  &:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+   color: $placeholder-color--focus;
+  }
+
+  &:-moz-placeholder, textarea:-moz-placeholder {
+   color: $placeholder-color;
+  }
+
+  &:focus:-moz-placeholder, textarea:focus:-moz-placeholder {
+   color: $placeholder-color--focus;
+  }
+
+  &::-moz-placeholder, textarea::-moz-placeholder {
+   opacity: 1;
+   color: $placeholder-color;
+  }
+
+  &:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+   opacity: 1;
+   color: $placeholder-color--focus;
+  }
+
+  &:-ms-input-placeholder, textarea:-ms-input-placeholder {
+   color: $placeholder-color;
+  }
+
+  &:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
+   color: $placeholder-color--focus;
+  }
+
+}
