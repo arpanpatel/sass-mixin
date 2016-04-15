@@ -102,6 +102,8 @@
   @include prefix(transform, $property, 'webkit' 'moz' 'spec');
 }
 
-@mixin perspective() {
+@mixin transform ($property...) {
+
+  @include prefix(transform, $property, 'webkit' 'moz' 'spec');
 
 }
