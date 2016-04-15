@@ -3,16 +3,38 @@
 .border-radius {
   position: relative;
   border: 1px solid #000;
+  width: 200px;
   @include  transition(all 0.5s ease-in-out);
-  @include font-size(25px, em);
-  @include rotate(5deg);
-  @include skew(5deg, 10deg);
-  @include scale(2,2);
-  @include translateX(20px);
-  @include box-shadow(10px 5px 5px rgba(#000,0.5));
+  //@include font-size(25px, em);
+//  @include rotate(5deg);
+  //@include skew(5deg, 10deg);
+  //@include scale(2,2);
+  //@include translateX(20px);
+  //@include box-shadow(10px 5px 5px rgba(#000,0.5));
+  @include mypos(absolute, 0);
+  p{
+      @include hyphens(auto);
+      text-align: justify;
+  }
+
 }
 
-// define animation
+.element {
+
+  @include placeholder {
+     color : #f00;
+  };
+
+  &:focus {
+
+    @include placeholder {
+      color: #000;
+    };
+
+  }
+}
+
+// Define Animation
 @include keyframes(scale) {
   0% {
     @include border-radius(3px);
