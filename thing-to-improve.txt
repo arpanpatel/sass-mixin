@@ -1,0 +1,29 @@
+1.  improve position mixin
+    
+Like, make possible thing like this
+ 
+postion(absolute,0);
+
+to compile like this
+position : absolute;
+top : 0;
+bottom :0;
+left :0;
+right :0;
+
+Absolute,
+Relative,
+Fixed,
+Sticky,
+Static,
+
+2. Added Placeholder Mixin 
+
+
+
+1. job form in ipad
+2. product menu image problem 
+3. background image change form resource page
+4. login form in geba
+5. remove transtion form menu overlay
+
