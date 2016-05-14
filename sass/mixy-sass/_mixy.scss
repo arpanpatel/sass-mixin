@@ -24,12 +24,16 @@
 
 @import "mixin/keyframes";
 
+@import "mixin/animation";
+
 @import "mixin/transform";
 
 @import "mixin/hyphens";
 
 @import "mixin/clearfix";
 
-@import "user-select";
+@import "mixin/user-select";
 
 @import "mixin/placeholder";
+
+@import "mixin/size";
