@@ -1,3 +1,24 @@
+/// Mixin allows you to add rounded borders to elements
+///
+/// @name user-select($selection-value)
+///
+/// @param {string} $selection-value - Define type of selection.
+///
+/// @example scss
+/// .element {
+///    @include user-select(none);
+/// }
+///
+/// @example css
+/// .element {
+///    -webkit-user-select: none;
+///    -ms-user-select: none;
+///    -moz-user-select: none;
+///    user-select: none;
+/// }
+///
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/user-select#Browser_compatibility
+
 @mixin user-select($selection-value) {
   @if not index(auto text none contain all, $selection-value) {
       @error "value must be either auto text none contain all.";
