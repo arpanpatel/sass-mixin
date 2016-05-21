@@ -2,16 +2,10 @@
   position: relative;
   border: 1px solid #000;
   width: 200px;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  top: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 .border-radius p {
@@ -22,35 +16,40 @@
   text-align: justify;
 }
 
-.element::-webkit-input-placeholder {
+.myinput {
+  width: 100%;
+  height: 45px;
+}
+
+.myinput::-webkit-input-placeholder {
   color: #f00;
 }
 
-.element:-moz-placeholder {
+.myinput:-moz-placeholder {
   color: #f00;
 }
 
-.element::-moz-placeholder {
+.myinput::-moz-placeholder {
   color: #f00;
 }
 
-.element:-ms-input-placeholder {
+.myinput:-ms-input-placeholder {
   color: #f00;
 }
 
-.element:focus::-webkit-input-placeholder {
+.myinput:focus::-webkit-input-placeholder {
   color: #000;
 }
 
-.element:focus:-moz-placeholder {
+.myinput:focus:-moz-placeholder {
   color: #000;
 }
 
-.element:focus::-moz-placeholder {
+.myinput:focus::-moz-placeholder {
   color: #000;
 }
 
-.element:focus:-ms-input-placeholder {
+.myinput:focus:-ms-input-placeholder {
   color: #000;
 }
 
@@ -86,3 +85,5 @@
     opacity: 1;
   }
 }
+
+/*# sourceMappingURL=application.css.map */
