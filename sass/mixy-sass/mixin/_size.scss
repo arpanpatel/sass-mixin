@@ -1,3 +1,34 @@
-@mixin size() {
-  
+/// Mixin allows you to add rounded borders to elements
+///
+/// @name size($radius)
+///
+/// @param {number} $width - Define the width of element.
+///
+/// @param {number} $height(optional) - Define height of element
+///
+/// @example scss (for same height and width)
+/// .element {
+///    @include size(100px);
+/// }
+///
+/// @example css
+/// .element {
+///    width: 100px;
+///    height: 100px;
+/// }
+///
+/// @example scss
+/// .element {
+///    @include size(100px, 50px)
+/// }
+///
+/// @example css
+/// .element {
+///    width: 100px;
+///    height: 50
+/// }
+
+@mixin size($width, $height: $width) {
+    width: $width;
+    height: $height;
 }
