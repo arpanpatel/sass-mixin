@@ -1,6 +1,19 @@
 @import "mixy-sass/mixy";
 
+
+@include font-face("myfont","din-regular", $extension: woff2 svg);
+
+@include keyframes(first)  {
+    10% {
+      opacity:0.5;
+    }
+    100% {
+      opacity:1;
+    }
+}
+
 .border-radius {
+  @include border-bottom-radius(5px);
   position: relative;
   border: 1px solid #000;
   width: 200px;
