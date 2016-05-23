@@ -1,35 +1,95 @@
-@mixin font-face ($font-family, $font-name, $extension: eot woff2 woff ttf svg) {
+/// Mixin allows you to genrate @font-face syntax
+///
+/// @name font-face($font-family, $font-name, $font-weight:normal, $font-style:normal, $extension: eot woff2 woff ttf svg)
+///
+/// @param {string} $font-family - Give name of font-family
+///
+/// @param {string} $font-name - Give name of font-name (without extension)
+///
+/// @param {string}{number} $font-weight(optional) - Set font weight
+///
+/// @param {string} $font-style(optional) - Set font style (italic, oblique, normal, unset, initial, inherit)
+///
+/// @param {string} $extension(optional) - Set extension (eot woff2 woff ttf svg)
+///
+/// @example scss
+///    @include font-face("myfont","din-regular");
+///
+/// @example css
+/// @font-face {
+///    font-family: "myfont";
+///    src: url("din-regular.eot");
+///    src: url("din-regular.eot?") format("embedded-opentype"),
+///         url("din-regular.woff2") format("woff2"),
+///         url("din-regular.woff") format("woff"),
+///         url("din-regular.ttf") format("truetype"),
+///         url("din-regular.svg") format("svg");
+///         font-weight: normal;
+///         font-style: normal;
+/// }
+///
+/// @example scss (with selected font extension)
+///    @include font-face("myfont","din-regular", $extension: woff2, svg);
+///
+/// @example css
+/// @font-face {
+///    font-family: "myfont";
+///    src: url("din-regular.woff2") format("woff2"),
+///         url("din-regular.svg") format("svg");
+///         font-weight: normal;
+///         font-style: normal;
+/// }
+///
+/// @link https://www.fontsquirrel.com/tools/webfont-generator
 
-  $formats: (
-  		eot: "embedded-opentype",
-  		ttf: "truetype"
- );
+@mixin font-face($font-family, $font-name, $font-weight:normal, $font-style:normal, $extension: eot woff2 woff ttf svg) {
 
-  @each $ext in $extension {
+  $src : null;
 
-       $formates: '';
+  $extchange: (
+    eot: '?'
+  );
+
+   $formates: (
+     eot : "embedded-opentype",
+     ttf : "truetype"
+   );
+
+   @each $ext in $extension {
 
       @if(map-has-key($formates, $ext)) {
 
-        $formates : map-get($formates, $ext);
+        $formate : map-get($formates,$ext);
 
       } @else {
 
-        $formates : $ext;
+        $formate : $ext;
 
       }
 
-      $src : url($font-family +"."+$ext) format(quote($formates));
-  }
+      @if(map-has-key($extchange, $ext)) {
+
+        $ext : $ext+map-get($extchange, $ext);
+
+      } @else {
+
+        $ext : $ext;
+
+      }
+
+      $src :  append($src,url($font-name+'.'+$ext) format(quote($formate)),comma)
+   }
 
   @font-face {
     font-family: $font-family;
-    src: url($font-name+'.eot'); /* IE9 Compat Modes */
-    src: url($font-name+'.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url($font-name+'.woff2') format('woff2'), /* Super Modern Browsers */
-         url($font-name+'.woff') format('woff'), /* Pretty Modern Browsers */
-         url($font-name+'.ttf')  format('truetype'), /* Safari, Android, iOS */
-         url($font-name+'.svg#svgFontName') format('svg'); /* Legacy iOS */
-  }
+
+    @if index($extension,eot) {
+       src: url($font-name+'.eot');
+    }
+
+    src: $src;
+    font-weight: $font-weight;
+    font-style: $font-style;
+ }
 
 }
