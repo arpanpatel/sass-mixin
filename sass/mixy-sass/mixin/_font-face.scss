@@ -42,12 +42,19 @@
 ///
 /// @link https://www.fontsquirrel.com/tools/webfont-generator
 
-@mixin font-face($font-family, $font-name, $font-weight:normal, $font-style:normal, $extension: eot woff2 woff ttf svg) {
+@mixin font-face(
+    $font-family, 
+    $font-name, 
+    $font-weight:normal, 
+    $font-style:normal, 
+    $extension: eot woff2 woff ttf svg
+) {
 
   $src : null;
 
   $extchange: (
-    eot: '?'
+    eot : '?',
+    svg : "#" + str-replace($font-family, ' ', '_')
   );
 
    $formates: (
@@ -77,7 +84,7 @@
 
       }
 
-      $src :  append($src,url($font-name+'.'+$ext) format(quote($formate)),comma)
+      $src :  append($src, url($font-name + '.' + $ext) format(quote($formate)),comma)
    }
 
   @font-face {
