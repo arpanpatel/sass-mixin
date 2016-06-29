@@ -1,7 +1,7 @@
 @import "mixy-sass/mixy";
 
 
-@include font-face("myfont","din-regular", $extension: woff2 svg);
+@include font-face("my font","din-regular", $extension: woff2 svg);
 
 @include keyframes(first)  {
     10% {
