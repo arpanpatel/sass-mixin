@@ -1,3 +1,23 @@
+/// Mixin allows to automatically clear its child elements
+///
+/// @name clearfix
+///
+/// @example scss
+/// .element {
+///    @include clearfix;
+/// }
+///
+/// @example css
+/// .element:before,
+/// .element:after {
+///    content: "";
+///    display: table;
+/// }
+///
+/// .element:after {
+///    clear: both;
+/// }
+
 @mixin clearfix {
     &:before,
     &:after {

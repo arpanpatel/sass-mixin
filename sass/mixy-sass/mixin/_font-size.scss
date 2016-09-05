@@ -36,6 +36,6 @@
      @error "Unit must be em or rem.";
    }
 
-   font-size: $size;
-   font-size: fontSize($size, $unit);
+   font-size : $size;
+   font-size : fontSize($size, $unit);
 }

@@ -3,32 +3,13 @@
 
 @include font-face("my font","din-regular", $extension: woff2 svg);
 
-@include keyframes(first)  {
-    10% {
-      opacity:0.5;
-    }
-    100% {
-      opacity:1;
-    }
-}
-
-.border-radius {
-  @include border-bottom-radius(5px);
-  position: relative;
-  border: 1px solid #000;
-  width: 200px;
-  //@include  transition(all 0.5s ease-in-out);
-  //@include mypos(absolute, 0);
-  @include user-select(none);
-  p {
-      @include hyphens(auto);
-      text-align: justify;
-  }
-
-}
 
 .myinput {
+
   @include size(100%, 45px);
+
+  @include clearfix;
+
   @include placeholder {
      color : #f00;
   };
@@ -40,16 +21,10 @@
     };
 
   }
+  
 }
 
-// Define Animation
-@include keyframes(scale) {
-  0% {
-    @include border-radius(3px);
-    opacity: 0.5;
-  }
-  100% {
-    @include border-radius(4px);
-    opacity: 1;
-  }
-}
+div.logo {
+   background: url("logo.png") no-repeat;
+   @include retina-image("logo2x.png", 100px, 25px);
+   }
