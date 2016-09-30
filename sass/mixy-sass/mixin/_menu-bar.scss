@@ -1,0 +1,24 @@
+/// Mixin allows truncate string with ellipsis
+///
+/// @name ellipsis
+///
+/// @example scss
+/// .element {
+///    @include ellipsis;
+/// }
+///
+/// @example css
+/// .element {
+///    overflow: hidden;
+///    white-space: nowrap;
+///    text-overflow: ellipsis;
+/// }
+
+@mixin menu-bar() {
+  [data-menu="menu-bar"] {
+      display: block;
+      width: 35px;
+      height: 35px;
+      border: 1px solid #000;
+  }
+}

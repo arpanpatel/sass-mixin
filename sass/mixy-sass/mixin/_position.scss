@@ -64,10 +64,7 @@
 
  $posvalue-length : length($posvalue);
  $offset : top right bottom left;
- @each $pos1 in $posvalue {
-   #{top} : $pos1;
- }
-
+ 
  @if($posvalue-length > 4) {
 
    @error "position list must be 4 or under 4";

@@ -3,7 +3,6 @@
 
 @include font-face("my font","din-regular", $extension: woff2 svg);
 
-
 .myinput {
 
   @include size(100%, 45px);
